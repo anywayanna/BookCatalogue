@@ -2,34 +2,34 @@
 @{
     ViewBag.Title = "Добавление / редактирование книги";
 }
-    <h1>Добавление / редактирование книги</h1>
-    <form asp-action="create" asp-controller="home">
-        <div class="form-group">
-            <label asp-for="Title" class="control-label">Название книги</label>
-            <input type="text" asp-for="Title" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Author" class="control-label">Автор</label>
-            <input type="text" asp-for="Author" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Price" class="control-label">Цена</label>
-            <input type="number" asp-for="Price" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="Genre" class="control-label">Жанр</label>
+<h1>Добавление / редактирование книги</h1>
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Title" class="control-label">Название книги</label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Author" class="control-label">Автор</label>
+        <input type="text" asp-for="Author" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Цена</label>
+        <input type="number" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Genre" class="control-label">Жанр</label>
         <select asp-for="Genre">
             @foreach (var genre in Enum.GetValues(typeof(Genres)))
             {
                 <option class="form-control" value="@genre.ToString()">@genre.ToString()</option>
             }
         </select>
-        </div>
-        <div class="form-group">
-            <label asp-for="PageCount" class="control-label">Количество странци</label>
-            <input type="number" asp-for="PageCount" class="form-control" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Сохранить" class="btn btn-default" />
-        </div>
-    </form>
+    </div>
+    <div class="form-group">
+        <label asp-for="PageCount" class="control-label">Количество странци</label>
+        <input type="number" asp-for="PageCount" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </div>
+</form>

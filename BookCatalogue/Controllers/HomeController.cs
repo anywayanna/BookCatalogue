@@ -43,9 +43,14 @@ namespace BookCatalogue.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(Book book)
         {
-            database.Books.Update(book);
-            await database.SaveChangesAsync();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                database.Books.Update(book);
+                await database.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            else
+                return View(book);
         }
 
 
