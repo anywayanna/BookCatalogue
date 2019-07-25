@@ -1,0 +1,42 @@
+﻿@using BookCatalogue.Models
+@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Книжный каталог";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+@*<head>
+    <title>Книжный каталог</title>
+</head>*@
+<body>
+
+    <h1>Книжный каталог</h1>
+    <table class="table">
+        <tr>
+            <td>Название книги</td>
+            <td>Автор</td>
+            <td>Цена</td>
+            <td>Жанр</td>
+            <td>Количество страниц</td>
+            <td></td>
+        </tr>
+        @foreach (Book book in Model)
+        {
+    <tr>
+        <td>@book.Title</td>
+        <td>@book.Author</td>
+        <td>@book.Price</td>
+        <td>@book.Genre</td>
+        <td>@book.PageCount</td>
+        <td><a href="/Home/Update/@book.Id">Редактировать</a></td>
+        <td><a href="/Home/Delete/@book.Id">Удалить</a></td>
+    </tr>
+        }
+    </table>
+    <a href="/Home/Update/"><input type="submit" value="Добавить книгу"/></a>
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+﻿@model  BookCatalogue.Models.Book
+@{ 
+    ViewBag.Title = "Подтвердите удаление";
+}
+    <h1>Подтвердите удаление книги</h1>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>Названи книги</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>Автор</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Author)
+            </dd>
+
+            <dt>Цена</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>Жанр</dt>
+            <dd>
+                @Html.DisplayFor(model => model.Genre)
+            </dd>
+
+            <dt>Количество страниц</dt>
+            <dd>
+                @Html.DisplayFor(model => model.PageCount)
+            </dd>
+        </dl>
+
+        <div>
+            <form asp-controller="Home" asp-action="Delete" method="post">
+                <div class="form-group">
+                    <a href= "/Home/Index/"><input type="submit" @*class="btn btn-default"*@ value="Удалить" /></a>
+                </div>
+            </form>
+        </div>
+    </div>
